@@ -32,10 +32,10 @@ function populateList(plates, platesList) {
 // Necesitamos tambien almacenar en el array de objetos si esta checked el input o no
 
 function toggleDone(e) {
-	if (!e.target.matches('input')) return;
+	if (!e.target.matches('input')) return; // skip this unless it's an input
 	const el = e.target;
 	const index = el.dataset.index;
-	items[index].done = !items[index].done;
+	items[index].done = !items[index].done; // TOGGLE: Si NO esta checked > checked y viceversa.
 	localStorage.setItem('items', JSON.stringify(items));
 	populateList(items, itemsList);
 }
@@ -43,3 +43,5 @@ function toggleDone(e) {
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 populateList(items, itemsList);
+
+// DATASET para acceder al data attribute (data) y despues -index (.index)
