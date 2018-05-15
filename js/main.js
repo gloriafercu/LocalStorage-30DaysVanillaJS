@@ -28,6 +28,9 @@ function populateList(plates, platesList) {
 	}).join('');
 }
 
+
+// Necesitamos tambien almacenar en el array de objetos si esta checked el input o no
+
 function toggleDone(e) {
 	if (!e.target.matches('input')) return;
 	const el = e.target;
@@ -40,7 +43,3 @@ function toggleDone(e) {
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 populateList(items, itemsList);
-
-
-
-// Necesitamos tambien almacenar en el array de objetos si esta checked el input o no
